@@ -13,15 +13,6 @@ BlogRoutes.get("/", async (req, res) => {
   }
 });
 
-// get data for the single page
-BlogRoutes.get("/:id" async (req, res) => {
-  try {
-    const result = await BlogModel.findOne({ _id: req.params.id });
-    res.send({message: "Show Data", result});
-  } catch (error) {
-    res.send(error);
-  }
-})
 
 // post blog Data
 BlogRoutes.post("/create", async (req, res) => {
