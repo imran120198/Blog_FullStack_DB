@@ -17,7 +17,7 @@ BlogRoutes.get("/", async (req, res) => {
 BlogRoutes.get("/:id" async (req, res) => {
   try {
     const result = await BlogsModel.findOne({ _id: req.params.id });
-    res.send(result);
+    res.send({message: "Show Data", result});
   } catch (error) {
     res.send(error);
   }
