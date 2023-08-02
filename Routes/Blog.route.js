@@ -7,7 +7,7 @@ const { BlogModel } = require("../Model/Blog.model");
 BlogRoutes.get("/", async (req, res) => {
   try {
     const getData = await BlogModel.find({});
-    res.send({ message: "Get Data successfully", getData });
+    res.send(getData);
   } catch (err) {
     res.send({ message: "Something went wrong in getting data", err });
   }
